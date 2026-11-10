@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinTrack | Dashboard</title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/fintrack.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Sidebar (desktop) -->
+      <aside class="col-lg-2 d-none d-lg-block sidebar p-3">
+        <a href="../index.html" class="text-white text-decoration-none fw-bold fs-5 d-block mb-4"><i class="bi bi-wallet2"></i> FinTrack</a>
+        <ul class="nav nav-pills flex-column gap-1">
+          <li class="nav-item"><a href="dashboard.html" class="nav-link active"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
+          <li class="nav-item"><a href="transactions.html" class="nav-link"><i class="bi bi-arrow-left-right me-2"></i>Transactions</a></li>
+          <li class="nav-item"><a href="budgets.html" class="nav-link"><i class="bi bi-bullseye me-2"></i>Budgets</a></li>
+          <li class="nav-item"><a href="categories.html" class="nav-link"><i class="bi bi-tags me-2"></i>Categories</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-gear me-2"></i>Settings</a></li>
+          <li class="nav-item mt-4"><a href="../index.html" class="nav-link"><i class="bi bi-box-arrow-left me-2"></i>Logout</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main -->
+      <main class="col-lg-10 p-0">
+        <!-- Top bar -->
+        <nav class="navbar bg-white shadow-sm px-3">
+          <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Open menu"><i class="bi bi-list"></i></button>
+          <span class="navbar-text fw-semibold d-none d-sm-inline">Dashboard</span>
+           <div class="dropdown ms-auto">
+            <a href="#" class="d-flex align-items-center text-decoration-none text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle fs-4 me-2"></i>
+              <span>Your name</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../index.html">Logout</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="p-4">
+          <h3 class="fw-bold mb-1">Welcome back!</h3>
+          <p class="text-muted mb-4">Here is your financial summary.</p>
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6 col-xl-3">
+              <div class="card stat-card border-0 shadow-sm"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="text-muted small">Remaining Balance</div><div class="fs-3 fw-bold">₱ —</div></div>
+                <i class="bi bi-wallet2 text-primary"></i></div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card stat-card border-0 shadow-sm"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="text-muted small">Income This Month</div><div class="fs-3 fw-bold">₱ —</div></div>
+                <i class="bi bi-arrow-down-circle text-success"></i></div></div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card stat-card border-0 shadow-sm"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="text-muted small">Expenses This Month</div><div class="fs-3 fw-bold">₱ —</div></div>
+                <i class="bi bi-arrow-up-circle text-danger"></i></div></div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card stat-card border-0 shadow-sm"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="text-muted small">Budget Used</div><div class="fs-3 fw-bold">₱ —</div></div>
+                <i class="bi bi-pie-chart text-warning"></i></div></div>
+            </div>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-5"><div class="card border-0 shadow-sm h-100"><div class="card-header bg-white fw-semibold">Budget Progress</div><div class="card-body"><p class="mb-1">Food</p><div class="progress mb-3" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 0%"></div></div><p class="mb-1">Transport</p><div class="progress mb-3" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 0%"></div></div><p class="mb-1">School</p><div class="progress mb-3" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 0%"></div></div><p class="mb-1">Leisure</p><div class="progress mb-3" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 0%"></div></div><p class="small text-muted mb-0">Set a budget to see your progress.</p></div></div></div>
+            <div class="col-lg-7">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-white fw-semibold">Recent Transactions</div>
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light"><tr><th>Description</th><th>Category</th><th>Date</th><th>Amount</th></tr></thead>
+                    <tbody><tr><td colspan="4" class="text-center text-muted py-4">No transactions yet. <a href="transactions.html">Add your first transaction</a></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Mobile sidebar -->
+  <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="mobileMenuLabel"><i class="bi bi-wallet2"></i> FinTrack</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="dashboard.html" class="nav-link text-white">Dashboard</a></li>
+        <li class="nav-item"><a href="transactions.html" class="nav-link text-white">Transactions</a></li>
+        <li class="nav-item"><a href="budgets.html" class="nav-link text-white">Budgets</a></li>
+        <li class="nav-item"><a href="categories.html" class="nav-link text-white">Categories</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-white">Settings</a></li>
+        <li class="nav-item"><a href="../index.html" class="nav-link text-white">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

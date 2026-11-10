@@ -1,0 +1,149 @@
+/* FinTrack styles on top of Bootstrap
+   Palette: navy, gold, soft blue-grey, white */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+ 
+:root {
+  --navy: #17213B;          /* sidebar, headings, balance card */
+  --navy-soft: #C4CBDD;     /* sidebar link text */
+  --brand: #F2A900;         /* gold: buttons and highlights */
+  --brand-dark: #D99700;    /* gold, darker on hover */
+  --page: #F2F4F8;          /* page background */
+  --line: #DDE1EA;          /* card borders */
+  --muted: #5B6479;
+ 
+  /* Make Bootstrap's own colors match */
+  --bs-body-font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bs-body-color: #17213B;
+  --bs-secondary-color: #5B6479;
+  --bs-primary: #17213B;
+  --bs-primary-rgb: 23, 33, 59;
+  --bs-link-color-rgb: 23, 33, 59;
+  --bs-link-hover-color-rgb: 217, 151, 0;
+  --bs-border-color: #DDE1EA;
+}
+ 
+body { background-color: var(--page); }
+h1, h2, h3, h4, h5, .fw-bold { letter-spacing: -.3px; }
+h3.fw-bold { font-weight: 800 !important; letter-spacing: -.5px; }
+.text-muted { color: var(--muted) !important; }
+ 
+/* Buttons and brand helpers */
+.btn-brand { background: var(--brand); border-color: var(--brand); color: var(--navy); font-weight: 700; border-radius: .65rem; }
+.btn-brand:hover { background: var(--brand-dark); border-color: var(--brand-dark); color: var(--navy); }
+.text-brand { color: var(--brand-dark); }
+.bg-brand { background: var(--brand); }
+.btn-outline-secondary { border-radius: .65rem; }
+ 
+.navbar-brand i { color: var(--brand); }
+.navbar .nav-link.active { font-weight: 700; }
+ 
+/* Soft blue-grey sections (the landing page's "bg-light" areas) */
+.bg-light { background-color: #E9EDF5 !important; }
+.table-light { --bs-table-bg: var(--page); --bs-table-color: var(--muted); }
+ 
+/* Cards: white, rounded, thin border, no shadow */
+.card, .card.border-0 {
+  border: 1px solid var(--line) !important;
+  border-radius: 14px;
+  box-shadow: none !important;
+}
+.card-header { border-bottom: 0; font-size: 1.05rem; font-weight: 700 !important; padding: 1.1rem 1.25rem .25rem; }
+.card-header.bg-white { background: transparent !important; }
+ 
+/* Progress bars */
+.progress { --bs-progress-bg: #E6E9F1; --bs-progress-bar-bg: var(--brand); border-radius: 99px; }
+ 
+/* Forms */
+.form-control, .form-select { border-radius: .65rem; background-color: #f7f8fb; }
+.form-control:focus, .form-select:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 .2rem rgba(242, 169, 0, .25);
+}
+.form-check-input:checked { background-color: var(--navy); border-color: var(--navy); }
+ 
+/* Hero (no photo needed) */
+.hero {
+  min-height: 80vh;
+  background: linear-gradient(135deg, #17213B 0%, #243157 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+ 
+.feature-icon {
+  width: 56px; height: 56px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(242, 169, 0, .15);
+  color: var(--brand-dark);
+  font-size: 1.5rem;
+}
+.card-hover { transition: transform .2s, box-shadow .2s; }
+.card-hover:hover { transform: translateY(-6px); box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .12) !important; }
+.card-img-top { height: 200px; object-fit: cover; }
+ 
+/* Auth pages: navy panel with a gold ring */
+.auth-wrapper { min-height: 100vh; }
+.auth-image {
+  background-size: cover;
+  background-position: center;
+  min-height: 250px;
+  background-color: var(--navy);
+}
+.auth-image.login {
+  background-image:
+    radial-gradient(circle at 88% 12%, transparent 0 48px, #F2A900 49px 74px, transparent 75px),
+    linear-gradient(135deg, #17213B, #1f2b4d);
+}
+.auth-image.signup {
+  background-image:
+    radial-gradient(circle at 12% 12%, transparent 0 48px, #F2A900 49px 74px, transparent 75px),
+    linear-gradient(135deg, #1f2b4d, #17213B);
+}
+ 
+/* Dashboard */
+.sidebar { min-height: 100vh; background: var(--navy); }
+.sidebar > a > i { color: var(--brand); }
+.sidebar .nav-link { color: var(--navy-soft); border-radius: .65rem; padding: .7rem .85rem; font-weight: 500; }
+.sidebar .nav-link:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.sidebar .nav-link.active { background: var(--brand); color: var(--navy); font-weight: 700; }
+.stat-card i { font-size: 2rem; }
+ 
+/* The first stat card (Remaining Balance) is the navy highlight card with a gold ring */
+.row > div:first-child > .stat-card {
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 18px;
+}
+.row > div:first-child > .stat-card .text-muted { color: var(--navy-soft) !important; }
+.row > div:first-child > .stat-card i { color: var(--brand) !important; position: relative; z-index: 1; }
+.row > div:first-child > .stat-card::after {
+  content: "";
+  position: absolute; right: -30px; top: -30px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 22px solid var(--brand);
+  opacity: .9;
+}
+ 
+footer a { text-decoration: none; }
+
+/* Front page fixes */
+.hero-band,
+.hero {
+  background: linear-gradient(135deg, #17213B 0%, #243157 100%);
+  color: #fff;
+}
+
+/* Make the Log in button visible on the white navbar */
+.navbar .btn-outline-light {
+  color: #17213B;
+  border-color: #17213B;
+}
+.navbar .btn-outline-light:hover {
+  background: #17213B;
+  color: #fff;
+}
